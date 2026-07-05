@@ -25,7 +25,7 @@ MODEL_DRIVE_URL = 'https://drive.google.com/file/d/12aAMps4MvNvwln5yMl06DthLXFf1
 @st.cache_resource
 def load_artifacts():
     if not os.path.exists(MODEL_PATH):
-        gdown.download(url=MODEL_DRIVE_URL, output=MODEL_PATH, quiet=False, fuzzy=True)
+        gdown.download(url=MODEL_DRIVE_URL, output=MODEL_PATH, quiet=False)
     model = load_model(MODEL_PATH)
     with open('tokenizer.pkl', 'rb') as f:
         tokenizer = pickle.load(f)
